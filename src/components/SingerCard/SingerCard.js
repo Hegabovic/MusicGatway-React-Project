@@ -1,15 +1,19 @@
-let SingerCard = () => {
-    return (
+import {NavLink} from "react-router-dom";
 
-        <div className="card m-5" id={'SingerCard'}>
-            <img className="card-img-top" src="" alt="Card image cap"/>
-            <div className="card-body">
-                <h5 className="card-title">Card title</h5>
-                <p className="card-text">This is a wider card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.</p>
-            </div>
-            <div className="card-footer">
-                <small className="text-muted">Last updated 3 mins ago</small>
+let SingerCard = ({singer}) => {
+    console.log(singer)
+    return (
+        <div className="my-card mt-4">
+            <div className="card-content">
+                <div className="img-place">
+                    <div id="card-img">
+                        <img className="card-img-top myimgclass"  src={`/images/covers/${singer.cover}.jpg`} alt="Card image cap"/>
+                    </div>
+                </div>
+                <div className="card-text d-flex flex-column justify-content-center">
+                    <h5 className={'text-center'}>{singer.name}</h5>
+                    <NavLink to={`/allSingers/${singer.id}`} className="btn">Details</NavLink>
+                </div>
             </div>
         </div>
     )
