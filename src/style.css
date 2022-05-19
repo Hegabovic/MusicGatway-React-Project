@@ -17,5 +17,8 @@
     background-position: center;
     opacity: 1;
     overflow: hidden;
+}
 
+#SingerCard{
+    width: 200px;
 }
